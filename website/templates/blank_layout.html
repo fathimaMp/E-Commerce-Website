@@ -13,47 +13,26 @@
 </head>
 
 <body>
-
-    
-    {% include 'header.html' %}
-
-
+    <div class="header">
+        <div class="container">
+            {% include 'menu.html' %}
             {% block banner %}
-
-
+            {% include 'banner_layout.html' %}
             {% endblock banner %}
 
+            
         </div>
     </div>
+
+    
+    
     {% block content %}
-
-
     {% endblock content %}
 
-   
-    <!-- Brands -->
 
-    <div class="brands">
-        <div class="small-container">
-            <div class="row">
-                <div class="col-5">
-                    <img src="{% static 'images/logo-godrej.png' %}">
-                </div>
-                <div class="col-5">
-                    <img src="{% static 'images/logo-oppo.png' %}">
-                </div>
-                <div class="col-5">
-                    <img src="{% static 'images/logo-coca-cola.png' %}">
-                </div>
-                <div class="col-5">
-                    <img src="{% static 'images/logo-paypal.png' %}">
-                </div>
-                <div class="col-5">
-                    <img src="{% static 'images/logo-philips.png' %}">
-                </div>
-            </div>
-        </div>
-    </div>
+
+
+   
 
     <!-- Footer -->
     <div class="footer">
