@@ -10,4 +10,4 @@ def list_products(request):
 
 #details of single product
 def product_details(request):
-    return render(request,'product_details.html')
+    return render(request,'product_detail.html')
