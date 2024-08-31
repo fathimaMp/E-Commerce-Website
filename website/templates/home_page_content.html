@@ -1,26 +1,8 @@
 {% load static %}
 
-<!-- Feadtued Categories -->
 
-<div class="categories">
-    <div class="small-container">
-        <div class="row">
-            <div class="col-3">
-                <img src="{% static 'images/category-1.jpg' %}">
-            </div>
-            <div class="col-3">
-                <img src="{% static 'images/category-2.jpg' %}">
-            </div>
-            <div class="col-3">
-                <img src="{% static 'images/category-3.jpg' %}">
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Featured Products -->
   <!-- Featured Products -->
-
+{% block content %}
   <div class="small-container">
     <h2 class="title">Featured Products</h2>
     <div class="row">
@@ -196,3 +178,4 @@
         </div>
     </div>
 </div>
+{% endblock %}
