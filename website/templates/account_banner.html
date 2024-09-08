@@ -6,24 +6,35 @@
                 <img src="{% static 'images/image1.png' %}" width="100%">
             </div>
             <div class="col-2">
-                <div class="form-container">
+                {% if messages %}
+                <div class="message-container">
+                    {% for message in messages %}
+                    <p class="{{ message.tags }}">{{ message }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                    <div class="form-container">
                     <div class="form-btn">
                         <span onclick="login()">Login</span>
                         <span onclick="register()">Register</span>
                         <hr id="Indicator">
                     </div>
-                    <form id="LoginForm">
-                        <input type="text" placeholder="Username">
-                        <input type="password" placeholder="Password">
-                        <button type="submit" class="btn">Login</button>
+                    <form id="LoginForm" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="text" name="username" maxlength="20" required minlength="5" placeholder="Username">
+                        <input type="password" name="password" placeholder="Password" minlength="8" required>
+                        <button type="submit" class="btn" name="login">Login</button>
                         <a href="">Forget Password</a>
                     </form>
 
-                    <form id="RegForm">
-                        <input type="text" placeholder="Username">
-                        <input type="email" placeholder="Email">
-                        <input type="password" placeholder="Password">
-                        <button type="submit" class="btn">Register</button>
+                    <form id="RegForm" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="text" name="username" maxlength="20" required minlength="5" placeholder="Username">
+                        <input type="email" name="email" placeholder="Email" required >
+                        <input type="password" name="password" placeholder="Password" minlength="8" required>
+                        <input type="text" name="address" placeholder="Address" minlength="8" required>
+                        <input type="number" name="phone" placeholder="Phone No." minlength="10" required>
+                        <button type="submit" class="btn" name="register">Register</button>
                     </form>
                 </div>
             </div>
@@ -47,3 +58,12 @@
 
     }
 </script>
+{% if register %}
+<script>
+    register()
+</script>
+{% else %}
+<script>
+    login()    
+</script>
+{% endif %}

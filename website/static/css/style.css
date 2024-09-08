@@ -75,7 +75,7 @@ p{
     background: radial-gradient(#fff,#ffd6d6);
 }
 .header .row{
-    margin-top: 70px;
+    margin-top: 1;
 }
 .categories{
     margin: 70px 0;
@@ -385,10 +385,32 @@ th:last-child{
     padding: 50px 0;
     background: radial-gradient(#fff, #ffd6d6);
 }
-.form-container{
+
+
+.message-container {
     background: #fff;
     width: 300px;
-    height: 400px;
+    height:fit-content;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.error{
+    color: red;
+}
+
+.success{
+    color: green;
+}
+
+.form-container {
+    background: #fff;
+    width: 300px;
+    height: 450px;
     position: relative;
     text-align: center;
     padding: 20px 0;
@@ -437,7 +459,7 @@ form .btn:focus{
     left: 0;
 }
 form a{
-    font-size: 12px;
+    font-size: 10px;
 }
 #Indicator{
     width: 100px;
