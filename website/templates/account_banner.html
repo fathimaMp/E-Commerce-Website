@@ -13,15 +13,17 @@
                     {% endfor %}
                 </div>
                 {% endif %}
-                    <div class="form-container">
+                <div class="form-container">
                     <div class="form-btn">
                         <span onclick="login()">Login</span>
                         <span onclick="register()">Register</span>
                         <hr id="Indicator">
                     </div>
-                    <form id="LoginForm" method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <input type="text" name="username" maxlength="20" required minlength="5" placeholder="Username">
+                <form id="LoginForm" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <input type="text" name="username" maxlength="20" required minlength="5" placeholder="Username">
+
                         <input type="password" name="password" placeholder="Password" minlength="8" required>
                         <button type="submit" class="btn" name="login">Login</button>
                         <a href="">Forget Password</a>
@@ -37,10 +39,13 @@
                         <button type="submit" class="btn" name="register">Register</button>
                     </form>
                 </div>
+
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 <script>
     var LoginForm = document.getElementById("LoginForm");
     var RegForm = document.getElementById("RegForm");
